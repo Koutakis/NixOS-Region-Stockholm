@@ -1,17 +1,23 @@
 { config, pkgs, ... }:
 {
+  imports = [
+    ./home/shell.nix
+  ];
+  
   home.stateVersion = "25.05";
   
   home.packages = with pkgs; [
     # User-level packages
   ];
-
+  
   programs.git = {
     enable = true;
-    userName = "Koutakis";
-    userEmail = "alexander.koutakis00@gmail.com";
+    settings = {
+      user.name = "Koutakis";
+      user.email = "alexander.koutakis00@gmail.com";
+    };
   };
-
+  
   programs.zsh = {
     enable = true;
     enableCompletion = true;

@@ -12,8 +12,8 @@ alias act_mini='source ~/github/mini/venv/bin/activate'
 alias dact="deactivate"
 
 # zsh
-alias zshrc="nvim ~/.zshrc"
-alias zshre="source ~/.zshrc && echo 'Reloaded shell'"
+alias zshrc="nvim ~/nixos-config/home/zshrc"
+alias zshre="source ~/nixos-config/home/zshrc && echo 'Reloaded shell'"
 cd() {
   builtin cd "$@" && pwd && ls
 }
@@ -52,7 +52,7 @@ alias kdp="kubectl delete pod "
 export PATH='/home/hq0x/.duckdb/cli/latest':$PATH
 alias rebase="git pull --rebase" # Rebase so to not introduce conflict
 alias start="act_mini && rf . && git add . && git commit"
-alias fix='act_mini && ruff format . && echo "✓ Ran ruff format" && git add . && echo "✓ Files staged" && git status && git commit -m "fix" && git push'
+alias fix='ruff format . && echo "✓ Ran ruff format" && git add . && echo "✓ Files staged" && git status && git commit -m "fix" && git push'
 alias lint="act_mini && ruff check --fix ."
 
 

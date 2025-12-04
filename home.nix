@@ -7,7 +7,7 @@
   home.stateVersion = "25.05";
   
   home.packages = with pkgs; [
-    # User-level packages
+    tmux
   ];
   
   programs.git = {
@@ -34,5 +34,20 @@
     };
     history.size = 10000;
     history.path = "$HOME/.zsh_history";
+  };
+
+  programs.tmux = {
+  enable = true;
+  terminal = "screen-256color";
+  keyMode = "vi";
+  plugins = with pkgs.tmuxPlugins; [
+    sensible
+    vim-tmux-navigator
+  ];
+  extraConfig = ''
+    set -g mouse on
+    bind | split-window -h
+    bind - split-window -v
+  '';
   };
 }

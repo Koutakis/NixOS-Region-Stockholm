@@ -28,6 +28,9 @@ alias big="ssh -i ~/.ssh/mini hq0x@plsosedwdb02.dc.sll.se"
 # python
 alias py="python3"
 
+# NixOS stuff
+alias upgrade="sudo nixos-rebuild switch --flake ~/nixos-config#wsl"
+
 # Ruff
 alias rf="ruff format"
 alias rc="ruff check"

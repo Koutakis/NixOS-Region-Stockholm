@@ -32,27 +32,6 @@
   
   programs.zsh = {
     enable = true;
-    enableCompletion = true;
-    autosuggestions.enable = true;
-    syntaxHighlighting.enable = true;
-    ohMyZsh = {
-      enable = true;
-      plugins = [
-        "git"
-        "z"
-      ];
-      theme = "robbyrussell";
-    };
-    shellAliases ={
-	upgrade = "sudo nixos-rebuild switch";
-	modify = "sudo nvim /etc/nixos/configuration.nix";	
-    };
-
-    histSize = 10000;
-    histFile = "$HOME/.zsh_history";
-    setOptions = [
-      "HIST_IGNORE_ALL_DUPS"
-    ];
   };
 
   # This allows unfree packages

@@ -77,18 +77,6 @@
     grim      # Screenshot tool
     slurp     # Region selector
     wl-clipboard  # Copy to clipboard
-
-    # HYPERLAND
-    brave
-    kitty alacritty # riced kitty terminal
-    dunst # notification daemon
-    libnotify
-    xfce.thunar #filemanager
-    xfce.thunar-volman
-    waybar
-    rofi-wayland #spotlight type search bar
-    _1password-gui
-    swww
  
     # TUI
     ranger

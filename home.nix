@@ -50,4 +50,13 @@
     bind - split-window -v
   '';
   };
+
+  programs.taskwarrior = {
+  enable = true;
+  extraConfig = ''
+    # Raw taskrc content
+    color=on
+    default.command=list
+  '';
+  };
 }

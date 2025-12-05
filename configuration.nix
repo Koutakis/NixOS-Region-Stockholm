@@ -8,11 +8,8 @@
 { config, lib, pkgs, ... }:
 
 {
-  #imports = [
-  #  # include NixOS-WSL modules
-  #  <nixos-wsl/modules>
-  #];
 
+  programs.nix-ld.enable = true; # This makes NixOS capable to open vs code
   wsl.enable = true;
   wsl.defaultUser = "hq0x";
 
@@ -58,11 +55,12 @@
     wl-clipboard  # Copy to clipboard
  
     # TUI
-    ranger
-    btop
-    tree
-    neovim
-    # pipewire and wireplumber), nerd font,
+    ranger # file explorer
+    btop # task manager
+    tree # lightweight file manager
+    neovim # text editor
+    taskwarrior2 # Taks manager
+    tldr # better help
 
     
   ];

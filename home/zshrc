@@ -182,4 +182,4 @@ ssh-add ~/.ssh/id_ed25519 2>/dev/null
 # Some nvim shit from install
 export PATH="$PATH:/opt/nvim-linux-x86_64/bin"
 
-
+task list

@@ -42,7 +42,10 @@ nix.settings.auto-optimise-store = true;
 
   ### -- THESE ARE ALL INSTALLED PROGRAMS -- ##  
   environment.systemPackages = with pkgs; [
- 
+    # PYHTON
+    python312
+
+
     # OS things
     vim 
     wget

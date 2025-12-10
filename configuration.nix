@@ -44,7 +44,8 @@ nix.settings.auto-optimise-store = true;
   environment.systemPackages = with pkgs; [
     # PYHTON
     python312
-
+    python312Packages.pip
+    stdenv.cc.cc.lib # this enables the use of numpy and pandas
 
     # OS things
     vim 
@@ -53,7 +54,9 @@ nix.settings.auto-optimise-store = true;
     gvfs # auto mount of incerted disks   
     pulseaudio
     wl-clipboard  # Copy to clipboard
- 
+    
+
+
     # TUI
     ranger # file explorer
     btop # task manager
@@ -61,6 +64,6 @@ nix.settings.auto-optimise-store = true;
     neovim # text editor
     taskwarrior2 # Taks manager
     tldr # better help
-    
+    bat # better cat 
   ];
 }

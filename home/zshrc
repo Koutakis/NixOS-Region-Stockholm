@@ -26,7 +26,7 @@ alias copy='xclip -selection clipboard <'
 alias mini="ssh -i ~/.ssh/mini hq0x@plsfpwrapp01.dc.sll.se"
 alias big="ssh -i ~/.ssh/mini hq0x@plsosedwdb02.dc.sll.se"
 # python
-alias py="python3"
+alias py="python3.12"
 
 # NixOS config
 alias upgrade="sudo nixos-rebuild switch --flake ~/nixos-config#wsl"
@@ -54,7 +54,7 @@ alias kdp="kubectl delete pod "
 export PATH='/home/hq0x/.duckdb/cli/latest':$PATH
 alias rebase="git pull --rebase" # Rebase so to not introduce conflict
 alias start="act_mini && rf . && git add . && git commit"
-alias fix='ruff format . && echo "✓ Ran ruff format" && git add . && echo "✓ Files staged" && git status && git commit -m "fix" && git push'
+alias fix='act_mini && ruff format . && echo "✓ Ran ruff format" && git add . && echo "✓ Files staged" && git status && git commit -m "fix" && git push'
 alias lint="act_mini && ruff check --fix ."
 
 
@@ -162,10 +162,10 @@ plugins=(git z pip helm docker colored-man-pages)
 
 #### ---------- On Startup ---------- ####
 
-export PINAPPLE_PASSWORD=believe-BAGNIO-filtrate-tamp-shire-fountain-tower-sinter-folklore &&
-export PINAPPLE_USER=miniplattformen_pinapple_encrypt &&
-export PINAPPLE_URL=https://pinapple.apps.ocp.mta.karolinska.se
-export REQUESTS_CA_BUNDLE="/home/hq0x/certs/pinapple_cert.pem"
+#export PINAPPLE_PASSWORD=believe-BAGNIO-filtrate-tamp-shire-fountain-tower-sinter-folklore &&
+#export PINAPPLE_USER=miniplattformen_pinapple_encrypt &&
+#export PINAPPLE_URL=https://pinapple.apps.ocp.mta.karolinska.se
+#export REQUESTS_CA_BUNDLE="/home/hq0x/certs/pinapple_cert.pem"
 
 zex() {
     if [ -n "$1" ]  # Check if a parameter was provided
@@ -181,5 +181,5 @@ ssh-add ~/.ssh/id_ed25519 2>/dev/null
 
 # Some nvim shit from install
 export PATH="$PATH:/opt/nvim-linux-x86_64/bin"
-
+export LD_LIBRARY_PATH=/run/current-system/sw/lib:$LD_LIBRARY_PATH
 task list

@@ -183,3 +183,5 @@ ssh-add ~/.ssh/id_ed25519 2>/dev/null
 export PATH="$PATH:/opt/nvim-linux-x86_64/bin"
 export LD_LIBRARY_PATH=/run/current-system/sw/lib:$LD_LIBRARY_PATH
 task list
+
+DISABLE_UNTRACKED_FILES_DIRTY="true" # This should help with removing untacked files from git status

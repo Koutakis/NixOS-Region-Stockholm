@@ -37,8 +37,11 @@ nix.settings.auto-optimise-store = true;
   nixpkgs.config.allowUnfree = true;
 
   # makes zsh the default shell
-  users.defaultUserShell = pkgs.zsh; 
+  users.defaultUserShell = pkgs.zsh;
 
+  # Docker settings
+  virtualisation.docker.enable = true; # Starts daemon
+  users.users.hq0x.extraGroups = [ "docker" ]; # Removes sudo form docker stuff
 
   ### -- THESE ARE ALL INSTALLED PROGRAMS -- ##  
   environment.systemPackages = with pkgs; [
@@ -54,7 +57,7 @@ nix.settings.auto-optimise-store = true;
     gvfs # auto mount of incerted disks   
     pulseaudio
     wl-clipboard  # Copy to clipboard
-    
+    docker
 
 
     # TUI

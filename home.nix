@@ -32,6 +32,25 @@
       upgrade = "sudo nixos-rebuild switch --flake ~/nixos-config#wsl";
       modify = "nvim ~/nixos-config/configuration.nix";
     };
+    initContent = ''
+    # Function for quick postgres setup
+    pg() {
+      if [ -z "$1" ]; then
+        echo "Usage: pg <name> [port]"
+        return 1
+      fi
+      local name=$1
+      local port=''${2:-5432}
+      docker run -d --rm \
+        --name "pg-$name" \
+        -e POSTGRES_PASSWORD=postgres \
+        -e POSTGRES_USER=postgres \
+        -p $port:5432 \
+        postgres:16
+      echo "Started pg-$name on port $port"
+      echo "Connect: postgresql://postgres:postgres@localhost:$port/postgres"
+    }
+    '';
     history.size = 10000;
     history.path = "$HOME/.zsh_history";
   };

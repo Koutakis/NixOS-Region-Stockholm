@@ -46,7 +46,7 @@
         -e POSTGRES_PASSWORD=postgres \
         -e POSTGRES_USER=postgres \
         -p $port:5432 \
-        postgres:16
+        postgres.image
       echo "Started pg-$name on port $port"
       echo "Connect: postgresql://postgres:postgres@localhost:$port/postgres"
     }

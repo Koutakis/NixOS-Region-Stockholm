@@ -20,7 +20,7 @@
   options = "--delete-older-than 14d";
   };
 
-nix.settings.auto-optimise-store = true;
+  nix.settings.auto-optimise-store = true;
 
 
   # Enabling flakes and other experimental featutes here

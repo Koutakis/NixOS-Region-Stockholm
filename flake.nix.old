@@ -10,18 +10,17 @@
   };
 
   outputs = { self, nixpkgs, nixos-wsl, home-manager, ... }: {
-    nixosConfigurations.hq0x = nixpkgs.lib.nixosSystem {
+    nixosConfigurations.wsl = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       modules = [
         nixos-wsl.nixosModules.wsl
-        ./common/wsl.nix
-        ./users/hq0x/configuration.nix
         home-manager.nixosModules.home-manager
         {
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
-          home-manager.users.hq0x = import ./users/hq0x/home.nix;
+          home-manager.users.hq0x = import ./home.nix;
         }
+        ./configuration.nix
       ];
     };
   };

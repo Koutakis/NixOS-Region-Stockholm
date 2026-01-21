@@ -2,7 +2,7 @@
 
 {
   imports = [
-    ../../home/shell.nix
+    ./home/shell.nix
   ];
 
   home.stateVersion = "25.05";

@@ -30,7 +30,7 @@ alias big="ssh -i ~/.ssh/mini hq0x@plsosedwdb02.dc.sll.se"
 alias py="python3.12"
 
 # NixOS config
-alias upgrade="sudo nixos-rebuild switch --flake ~/nixos-config#wsl"
+alias upgrade="sudo nixos-rebuild switch --flake ~/nixos-config#hq0x"
 alias osc="sudo nvim /home/hq0x/nixos-config/configuration.nix"
 alias homec="sudo nvim /home/hq0x/nixos-config/home.nix"
 

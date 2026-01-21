@@ -1,0 +1,188 @@
+# If you come from bash you might have to change your $PATH.
+# export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
+
+# Set name of the theme to load --- if set to "random", it will
+# load a random theme each time Oh My Zsh is loaded, in which case,
+# to know which specific one was loaded, run: echo $RANDOM_THEME
+# See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
+ZSH_THEME="robbyrussell"
+
+# virtualenv python
+alias act_mini='source ~/github/mini/.venv/bin/activate'
+alias act_meta='source ~/github/metaprogram/venv/bin/activate'
+alias dact="deactivate"
+
+# zsh
+alias zshrc="nvim ~/nixos-config/home/zshrc"
+alias zshre="source ~/nixos-config/home/zshrc && echo 'Reloaded shell'"
+cd() {
+  builtin cd "$@" && pwd && ls
+}
+alias back="cd /home/hq0x/github"
+alias matrix="cmatrix -C cyan"
+alias clo='fc -ln -1 | zsh 2>&1 | xclip -selection clipboard' 
+alias copy='xclip -selection clipboard <'
+
+# Connect 
+alias mini="ssh -i ~/.ssh/mini hq0x@plsfpwrapp01.dc.sll.se"
+alias big="ssh -i ~/.ssh/mini hq0x@plsosedwdb02.dc.sll.se"
+# python
+alias py="python3.12"
+
+# NixOS config
+alias upgrade="sudo nixos-rebuild switch --flake ~/nixos-config#wsl"
+alias osc="sudo nvim /home/hq0x/nixos-config/configuration.nix"
+alias homec="sudo nvim /home/hq0x/nixos-config/home.nix"
+
+# Ruff
+alias rf="ruff format"
+alias rc="ruff check"
+
+#ripgrep
+alias rgf='rg --files | rg'
+
+#kubectl
+alias k="kubectl"
+alias kg="kubectl get"
+alias kgp="kubectl get pods"
+alias kdp="kubectl delete pod "
+
+# 1password
+#alias 1p="eval $(op signin)"
+#eval "$(op completion zsh)"; compdef _op op
+
+# Github
+export PATH='/home/hq0x/.duckdb/cli/latest':$PATH
+alias rebase="git pull --rebase" # Rebase so to not introduce conflict
+alias start="act_mini && rf . && git add . && git commit"
+alias fix='act_mini && ruff format . && echo "✓ Ran ruff format" && git add . && echo "✓ Files staged" && git status && git commit -m "fix" && git push'
+alias lint="act_mini && ruff check --fix ."
+
+
+# Set list of themes to pick from when loading at random
+# Setting this variable when ZSH_THEME=random will cause zsh to load
+# a theme from this variable instead of looking in $ZSH/themes/
+# If set to an empty array, this variable will have no effect.
+# ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
+
+# Uncomment the following line to use case-sensitive completion.
+# CASE_SENSITIVE="true"
+
+# Uncomment the following line to use hyphen-insensitive completion.
+# Case-sensitive completion must be off. _ and - will be interchangeable.
+# HYPHEN_INSENSITIVE="true"
+
+# Uncomment one of the following lines to change the auto-update behavior
+# zstyle ':omz:update' mode disabled  # disable automatic updates
+# zstyle ':omz:update' mode auto      # update automatically without asking
+# zstyle ':omz:update' mode reminder  # just remind me to update when it's time
+
+# Uncomment the following line to change how often to auto-update (in days).
+# zstyle ':omz:update' frequency 13
+
+# Uncomment the following line if pasting URLs and other text is messed up.
+# DISABLE_MAGIC_FUNCTIONS="true"
+
+# Uncomment the following line to disable colors in ls.
+# DISABLE_LS_COLORS="true"
+
+# Uncomment the following line to disable auto-setting terminal title.
+# DISABLE_AUTO_TITLE="true"
+
+# Uncomment the following line to enable command auto-correction.
+# ENABLE_CORRECTION="true"
+
+# Uncomment the following line to display red dots whilst waiting for completion.
+# You can also set it to another string to have that shown instead of the default red dots.
+# e.g. COMPLETION_WAITING_DOTS="%F{yellow}waiting...%f"
+# Caution: this setting can cause issues with multiline prompts in zsh < 5.7.1 (see #5765)
+# COMPLETION_WAITING_DOTS="true"
+
+# Uncomment the following line if you want to disable marking untracked files
+# under VCS as dirty. This makes repository status check for large repositories
+# much, much faster.
+# DISABLE_UNTRACKED_FILES_DIRTY="true"
+
+# Uncomment the following line if you want to change the command execution time
+# stamp shown in the history command output.
+# You can set one of the optional three formats:
+# "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
+# or set a custom format using the strftime function format specifications,
+# see 'man strftime' for details.
+# HIST_STAMPS="mm/dd/yyyy"
+
+# Would you like to use another custom folder than $ZSH/custom?
+# ZSH_CUSTOM=/path/to/new-custom-folder
+
+# Which plugins would you like to load?
+# Standard plugins can be found in $ZSH/plugins/
+# Custom plugins may be added to $ZSH_CUSTOM/plugins/
+# Example format: plugins=(rails git textmate ruby lighthouse)
+# Add wisely, as too many plugins slow down shell startup.
+plugins=(git z pip helm docker colored-man-pages)
+
+# User configuration
+
+# export MANPATH="/usr/local/man:$MANPATH"
+
+# You may need to manually set your language environment
+# export LANG=en_US.UTF-8
+
+# Preferred editor for local and remote sessions
+# if [[ -n $SSH_CONNECTION ]]; then
+#   export EDITOR='vim'
+# else
+#   export EDITOR='nvim'
+# fi
+
+# Compilation flags
+# export ARCHFLAGS="-arch $(uname -m)"
+
+# Set personal aliases, overriding those provided by Oh My Zsh libs,
+# plugins, and themes. Aliases can be placed here, though Oh My Zsh
+# users are encouraged to define aliases within a top-level file in
+# the $ZSH_CUSTOM folder, with .zsh extension. Examples:
+# - $ZSH_CUSTOM/aliases.zsh
+# - $ZSH_CUSTOM/macos.zsh
+# For a full list of active aliases, run `alias`.
+#
+# Example aliases
+# alias zshconfig="mate ~/.zshrc"
+# alias ohmyzsh="mate ~/.oh-my-zsh"
+
+
+#### -------------Installed Shit--------------- ####
+
+# tmux
+# ripgrep
+# ranger
+# vim
+# fzf
+# tree
+# btop
+
+#### ---------- On Startup ---------- ####
+
+#export PINAPPLE_PASSWORD=believe-BAGNIO-filtrate-tamp-shire-fountain-tower-sinter-folklore &&
+#export PINAPPLE_USER=miniplattformen_pinapple_encrypt &&
+#export PINAPPLE_URL=https://pinapple.apps.ocp.mta.karolinska.se
+#export REQUESTS_CA_BUNDLE="/home/hq0x/certs/pinapple_cert.pem"
+
+zex() {
+    if [ -n "$1" ]  # Check if a parameter was provided
+    then
+        kubectl exec -it "$1" -- /bin/zsh
+    else
+        echo "Usage: zex [pod_name]"
+    fi
+}
+
+eval "$(ssh-agent -s)" > /dev/null 2>&1
+ssh-add ~/.ssh/id_ed25519 2>/dev/null
+
+# Some nvim shit from install
+export PATH="$PATH:/opt/nvim-linux-x86_64/bin"
+export LD_LIBRARY_PATH=/run/current-system/sw/lib:$LD_LIBRARY_PATH
+task list
+
+DISABLE_UNTRACKED_FILES_DIRTY="true" # This should help with removing untacked files from git status

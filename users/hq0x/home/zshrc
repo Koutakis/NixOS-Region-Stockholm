@@ -13,8 +13,8 @@ alias act_meta='source ~/github/metaprogram/venv/bin/activate'
 alias dact="deactivate"
 
 # zsh
-alias zshrc="nvim ~/nixos-config/home/zshrc"
-alias zshre="source ~/nixos-config/home/zshrc && echo 'Reloaded shell'"
+alias zshrc="nvim ~/nixos-config/users/hq0x/home/zshrc"
+alias zshre="source ~/nixos-config/users/hq0x/home/zshrc && echo 'Reloaded shell'"
 cd() {
   builtin cd "$@" && pwd && ls
 }

@@ -8,7 +8,6 @@ export ZSH="$HOME/.oh-my-zsh"
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 ZSH_THEME="robbyrussell"
 
-
 # zsh
 alias zshrc="sudo nvim ~/github/nixos-config/users/j0vf/zshrc && echo 'sourced'"
 alias zshre="source ~/github/nixos-config/users/j0vf/zshrc && echo 'Reloaded shell'"

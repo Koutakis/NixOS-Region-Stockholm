@@ -13,7 +13,15 @@
   
   programs.zsh = {
     enable = true;
-    initExtra = builtins.readFile ./zshrc;
+    oh-my-zsh = {
+      enable = true;
+      theme = "robbyrussell"; 
+      plugins = [ "git" "docker" "z" ];
+    };
+    initExtra = ''
+    # Source local config if exists (not in git)
+    [[ -f ~/.zshrc.local ]] && source ~/.zshrc.local
+    '';
   };
   
   programs.tmux = {

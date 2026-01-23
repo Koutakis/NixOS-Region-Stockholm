@@ -13,6 +13,7 @@
     gvfs
     pulseaudio
     wl-clipboard
+    xclip
     docker
     ranger
     taskwarrior2

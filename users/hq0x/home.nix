@@ -76,4 +76,28 @@
       default.command=list
     '';
   };
+
+  home.file.".config/gobang/config.toml".text = ''
+    [[conn]]
+    type = "postgres"
+    name = "local-postgres"
+    user = "postgres"
+    host = "localhost"
+    port = 5432
+    database = "postgres"
+    password = "postgres"
+  '';
+
+  home.file.".config/lazysql/config.toml".text = ''
+  [[database]]
+  Name = 'local-postgres'
+  Provider = 'postgres'
+  DBName = 'postgres'
+  URL = 'postgres://postgres:postgres@localhost:5432/postgres?sslmode=disable'
+  
+  [application]
+  DefaultPageSize = 100
+  DisableSidebar = false
+  SidebarOverlay = false
+'';
 }

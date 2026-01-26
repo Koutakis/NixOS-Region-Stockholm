@@ -14,7 +14,11 @@
     pulseaudio
     wl-clipboard
     docker
+    gobang # trash bin
+    lazysql
     ranger
     taskwarrior2
+    _1password-cli
+    nmap # pi stuff natowrking i think its lata ok?!?!?
   ];
 }

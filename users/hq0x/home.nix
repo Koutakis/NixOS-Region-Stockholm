@@ -64,6 +64,8 @@
     ];
     extraConfig = ''
       set -g mouse on
+      set -g base-index 1
+      set -g pane-base-index 1
       bind | split-window -h
       bind - split-window -v
     '';

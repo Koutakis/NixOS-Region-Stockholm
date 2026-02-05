@@ -11,6 +11,7 @@ let
     ps.matplotlib
     ps.pyarrow
     ps.polars
+
   ]);
 in
 mkShell {
@@ -33,3 +34,4 @@ mkShell {
   '';
 
 }
+

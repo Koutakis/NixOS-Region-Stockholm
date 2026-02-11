@@ -3,7 +3,7 @@
 {
   programs.nix-ld.enable = true;
   wsl.enable = true;
-  
+  wsl.interop.register = true;
   system.stateVersion = "25.05";
   
   nix.gc = {

@@ -59,7 +59,7 @@
       modules = [
         nixos-wsl.nixosModules.wsl
         ./common/wsl.nix
-        ./users/j0vf/configuration.nix
+        ./users/j4h0/configuration.nix
         home-manager.nixosModules.home-manager
         {
           home-manager.useGlobalPkgs = true;

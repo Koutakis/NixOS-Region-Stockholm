@@ -54,7 +54,7 @@
         }
       ];
     };
-    nixosConfigurations.j0vf = nixpkgs.lib.nixosSystem {
+    nixosConfigurations.j4h0 = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       modules = [
         nixos-wsl.nixosModules.wsl
@@ -64,7 +64,7 @@
         {
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
-          home-manager.users.j0vf = import ./users/j0vf/home.nix;
+          home-manager.users.j4h0 = import ./users/j4h0/home.nix;
         }
       ];
     };

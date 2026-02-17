@@ -54,5 +54,19 @@
         }
       ];
     };
+    nixosConfigurations.j0vf = nixpkgs.lib.nixosSystem {
+      system = "x86_64-linux";
+      modules = [
+        nixos-wsl.nixosModules.wsl
+        ./common/wsl.nix
+        ./users/j0vf/configuration.nix
+        home-manager.nixosModules.home-manager
+        {
+          home-manager.useGlobalPkgs = true;
+          home-manager.useUserPackages = true;
+          home-manager.users.j0vf = import ./users/j0vf/home.nix;
+        }
+      ];
+    };
   };
 }

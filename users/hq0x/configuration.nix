@@ -18,6 +18,7 @@
     lazysql
     ranger
     taskwarrior2
+    kubernetes-helm
     nodejs
     _1password-cli
     nmap # pi stuff natowrking i think its lata ok?!?!?

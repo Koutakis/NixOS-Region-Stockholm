@@ -11,7 +11,9 @@ let
     ps.matplotlib
     ps.pyarrow
     ps.polars
-
+    ps.pyodbc
+    ps.psycopg
+    ps.croniter
   ]);
 in
 mkShell {

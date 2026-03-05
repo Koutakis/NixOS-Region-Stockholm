@@ -31,7 +31,7 @@
       upgrade = "sudo nixos-rebuild switch --flake ~/nixos-config#hq0x";
       modify = "nvim ~/nixos-config/users/hq0x/configuration.nix";
     };
-    initExtra = ''
+    initContent = ''
       # Function for quick postgres setup
       pg() {
         if [ -z "$1" ]; then
@@ -53,6 +53,17 @@
     history.size = 10000;
     history.path = "$HOME/.zsh_history";
   };
+
+  programs.ssh = {
+  enable = true;
+  matchBlocks = {
+    "mini" = {
+      hostname = "plsfpwrapp01.dc.sll.se";
+      user = "hq0x";
+      identityFile = "~/.ssh/mini";
+    };
+  };
+};
 
   programs.tmux = {
     enable = true;

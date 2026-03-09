@@ -5,7 +5,12 @@
   wsl.enable = true;
   wsl.interop.register = true;
   system.stateVersion = "25.05";
-  
+ 
+environment.sessionVariables = {
+  LD_LIBRARY_PATH = "${pkgs.zlib}/lib";
+};
+
+
   nix.gc = {
     automatic = true;
     dates = "weekly";
@@ -32,5 +37,6 @@
     bat
     tldr
     uv
+    zlib
   ];
 }

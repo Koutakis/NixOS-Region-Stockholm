@@ -12,11 +12,12 @@
   ];
 
   programs.git = {
-    enable = true;
-    userName = "Koutakis";
-    userEmail = "alexander.koutakis00@gmail.com";
-  };
-
+      enable = true;
+      settings.user = {
+        name = "Koutakis";
+        email = "alexander.koutakis00@gmail.com";
+      };
+    };
   programs.zsh = {
     enable = true;
     enableCompletion = true;
@@ -56,6 +57,7 @@
 
   programs.ssh = {
   enable = true;
+  enableDefaultConfig = false;
   matchBlocks = {
     "mini" = {
       hostname = "plsfpwrapp01.dc.sll.se";

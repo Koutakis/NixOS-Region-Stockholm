@@ -7,8 +7,8 @@
   system.stateVersion = "25.05";
  
 environment.sessionVariables = {
-  LD_LIBRARY_PATH = "${pkgs.zlib}/lib";
-};
+   LD_LIBRARY_PATH = "${pkgs.zlib}/lib:${pkgs.stdenv.cc.cc.lib}/lib";
+  };
 
 
   nix.gc = {

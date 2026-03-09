@@ -9,64 +9,28 @@
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
   };
   
-  outputs = { self, nixpkgs, nixos-wsl, home-manager, ... }: {
-    nixosConfigurations.hq0x = nixpkgs.lib.nixosSystem {
+  outputs = { self, nixpkgs, nixos-wsl, home-manager, ... }:
+  let
+    mkUser = username: nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       modules = [
         nixos-wsl.nixosModules.wsl
         ./common/wsl.nix
-        ./users/hq0x/configuration.nix
+        ./users/${username}/configuration.nix
         home-manager.nixosModules.home-manager
         {
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
-          home-manager.users.hq0x = import ./users/hq0x/home.nix;
+          home-manager.users.${username} = import ./users/${username}/home.nix;
         }
       ];
     };
-
-    nixosConfigurations.borat = nixpkgs.lib.nixosSystem {
-      system = "x86_64-linux";
-      modules = [
-        nixos-wsl.nixosModules.wsl
-        ./common/wsl.nix
-        ./users/borat/configuration.nix
-        home-manager.nixosModules.home-manager
-        {
-          home-manager.useGlobalPkgs = true;
-          home-manager.useUserPackages = true;
-          home-manager.users.borat = import ./users/borat/home.nix;
-        }
-      ];
-    };
-
-    nixosConfigurations.j0vf = nixpkgs.lib.nixosSystem {
-      system = "x86_64-linux";
-      modules = [
-        nixos-wsl.nixosModules.wsl
-        ./common/wsl.nix
-        ./users/j0vf/configuration.nix
-        home-manager.nixosModules.home-manager
-        {
-          home-manager.useGlobalPkgs = true;
-          home-manager.useUserPackages = true;
-          home-manager.users.j0vf = import ./users/j0vf/home.nix;
-        }
-      ];
-    };
-    nixosConfigurations.j4h0 = nixpkgs.lib.nixosSystem {
-      system = "x86_64-linux";
-      modules = [
-        nixos-wsl.nixosModules.wsl
-        ./common/wsl.nix
-        ./users/j4h0/configuration.nix
-        home-manager.nixosModules.home-manager
-        {
-          home-manager.useGlobalPkgs = true;
-          home-manager.useUserPackages = true;
-          home-manager.users.j4h0 = import ./users/j4h0/home.nix;
-        }
-      ];
+  in {
+    nixosConfigurations = {
+      hq0x  = mkUser "hq0x";
+      borat = mkUser "borat";
+      j0vf  = mkUser "j0vf";
+      j4h0  = mkUser "j4h0";
     };
   };
 }

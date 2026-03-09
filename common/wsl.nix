@@ -31,5 +31,6 @@
     btop
     bat
     tldr
+    uv
   ];
 }

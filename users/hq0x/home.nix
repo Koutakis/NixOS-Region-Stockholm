@@ -29,7 +29,7 @@
       theme = "robbyrussell";
     };
     shellAliases = {
-      upgrade = "sudo nixos-rebuild switch --flake ~/nixos-config#hq0x";
+      upgrade = "sudo nixos-rebuild switch --flake ~/nixos-config#$(whoami)";
       modify = "nvim ~/nixos-config/users/hq0x/configuration.nix";
     };
     initContent = ''

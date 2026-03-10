@@ -4,6 +4,7 @@
   wsl.defaultUser = "j0vf";
   
   virtualisation.docker.enable = true;
+  services.k3s.enable = true;
   users.users.j0vf.extraGroups = [ "docker" ];
   
   environment.systemPackages = with pkgs; [
@@ -16,5 +17,6 @@
     docker
     ranger
     taskwarrior2
+    jq
   ];
 }

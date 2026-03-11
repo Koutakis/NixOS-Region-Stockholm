@@ -8,8 +8,7 @@
 ZSH_THEME="robbyrussell"
 
 # virtualenv python
-alias act_mini='source ~/github/mini/.venv/bin/activate'
-alias act_meta='source ~/github/metaprogram/venv/bin/activate'
+alias act='source .venv/bin/activate'
 alias dact="deactivate"
 
 # zsh

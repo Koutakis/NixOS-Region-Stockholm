@@ -67,16 +67,6 @@ ssh -T git@github.com
 
 ### Step 3: Request Admin to Add You
 
-Contact the repo admin (Koutakis) to add your user to `flake.nix`. They need to:
-
-1. Create `users/your-username/home.nix`
-2. Add your config to `flake.nix`:
-```nix
-   wsl-your-username = mkUserConfig "your-username";
-```
-
-Once admin confirms, proceed to Step 4.
-
 ### Step 4: Clone and Apply Config
 ```bash
 git clone git@github.com:Koutakis/NixOS-Region-Stockholm.git ~/nixos-config
@@ -89,10 +79,9 @@ sudo nixos-rebuild switch --flake ~/nixos-config#wsl-$(whoami)
 
 You can ONLY modify: `users/<your-username>/home.nix`
 
-DO NOT modify:
+DO NOT modify (unless you really know what you are doing or plan to make a pull request):
 - `flake.nix` (admin only)
-- `configuration.nix` (admin only)  
-- `modules/` (admin only)
+- `common/wsl.nix` (admin only)  
 - Other users' directories
 
 Edit your config:
@@ -120,22 +109,8 @@ git add users/$(whoami)/
 git commit -m "Description of changes"
 git push
 ```
-
-### Browse Other Configs for Inspiration
-
-Check `users/` directory to see other developers' setups.
-
 ## Finding Packages
 
 Search for packages: https://search.nixos.org/packages
 
-## Troubleshooting
 
-### Rebuild fails
-Check error message, verify `home.nix` syntax.
-
-### Permission denied on git push
-Verify SSH key is added to GitHub.
-
-### "error: path does not exist"
-Contact admin - your user config might not be in `flake.nix` yet.

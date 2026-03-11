@@ -31,6 +31,7 @@
       borat = mkUser "borat";
       j0vf  = mkUser "j0vf";
       j4h0  = mkUser "j4h0";
+      hr4m  = mkUser "hr4m";
     };
   };
 }

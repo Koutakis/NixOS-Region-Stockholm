@@ -7,7 +7,7 @@
   system.stateVersion = "25.05";
  
 environment.sessionVariables = {
-   LD_LIBRARY_PATH = "${pkgs.zlib}/lib:${pkgs.stdenv.cc.cc.lib}/lib";
+   LD_LIBRARY_PATH = "${pkgs.zlib}/lib:${pkgs.stdenv.cc.cc.lib}/lib:${pkgs.unixODBC}/lib";
   };
 
 
@@ -38,5 +38,6 @@ environment.sessionVariables = {
     tldr
     uv
     zlib
+    unixODBC
   ];
 }

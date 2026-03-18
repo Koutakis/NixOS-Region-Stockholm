@@ -17,6 +17,7 @@
     docker
     ranger
     taskwarrior2
+    kubernetes-helm
     jq
   ];
 }
